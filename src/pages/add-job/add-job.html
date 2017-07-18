@@ -1,0 +1,83 @@
+<!--
+  Generated template for the AddJobPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>add-job</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Title</ion-label>
+        <ion-input
+        type="text"
+        placeholder="wrtie title"
+        name="title"
+        ngModel
+        required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Description</ion-label>
+        <ion-textarea
+          name="description"
+          ngModel
+          required>
+        </ion-textarea>
+      </ion-item>
+    </ion-list>
+    
+    <!--map buttons-->
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button
+            ion-button block outline icon-left type="button" (click)="onLocate">
+            <ion-icon name="locate"></ion-icon>
+            Locate me
+            </button>
+        </ion-col>
+        <ion-col>
+          <button
+            ion-button block outline icon-left type="button" (click)="onOpenMap()">
+            <ion-icon name="map"></ion-icon>
+            find on map
+          </button>
+        </ion-col>
+      </ion-row>
+
+      
+      <!--chosen place-->
+      <ion-row>
+        <ion-col>
+          <p>selected place</p>
+        </ion-col>
+      </ion-row>
+
+      <!--final buttons-->
+      <ion-row>
+        <ion-col>
+          <button
+            ion-button
+            block
+            icon-left
+            color = "secondary"
+            type="submit"
+            [disabled]="!f.valid">
+            Add this mission
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
